@@ -36,17 +36,12 @@ function Movie() {
         <NavBar />
       </header>
       <main>
-        {/* Movie info here! */}
-        <h1>Movie Title: {title}</h1>
-        <p>Movie Time: {time}</p>
-        {genres && genres.length > 0 && (
-          <div>
-            <p>Genres:</p>
-            {genres.map((genre, index) => (
-              <span key={index}>{genre}{index < genres.length - 1 ? ', ' : ''}</span>
-            ))}
-          </div>
-        )}
+        <h1>{title}</h1>
+        <p>{time}</p>
+        {/* ✅ Render each genre in its own span */}
+        {genres && genres.map((genre, index) => (
+          <span key={index}>{genre}</span>
+        ))}
       </main>
     </>
   );
